@@ -1,10 +1,15 @@
+// HubSpot Custom Code Action example for deduplicating contacts
+// based on phone number duplicates.
+// Works with HubSpot API Client v8
+
 const hubspot = require("@hubspot/api-client");
 
 exports.main = async (event, callback) => {
   const hubspotClient = new hubspot.Client({
     accessToken: process.env.PRIVATE_APP_TOKEN, //Grab it from the secrets vault
   });
-  const phone = event.inputFields["phone"];
+  const phone = event.inputFields["phone"]; //Grab it from inputs
+
   const PublicObjectSearchRequest = {
     filterGroups: [
       {
