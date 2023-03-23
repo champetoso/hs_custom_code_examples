@@ -1,3 +1,8 @@
+///
+/// Code to be used with HubSpot API Client v3
+///
+
+
 const hubspot = require('@hubspot/api-client');
 
 exports.main = async (event, callback) => {
